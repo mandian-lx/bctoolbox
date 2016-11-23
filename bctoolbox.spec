@@ -1,7 +1,6 @@
 %define major	0
 %define libname	%mklibname %{name} %{major}
 %define devname	%mklibname -d %{name}
-%define devstat	%mklibname -s %{name}
 
 Summary:	Library for accessing USB devices
 Name:		bctoolbox
@@ -53,21 +52,6 @@ This package includes the development files for %{name}.
 %{_libdir}/pkgconfig/%{name}.pc
 %{_libdir}/pkgconfig/%{name}-tester.pc
 %{_datadir}/%{name}/cmake/
-
-#--------------------------------------------------------------------
-
-%package -n	%{devstat}
-Summary:	Development files for %{name}
-Group:		Development/C
-Requires:	%{devname} = %{version}-%{release}
-Provides:	%{name}-static-devel = %{version}-%{release}
-
-%description -n	%{devname}
-This package includes the development files for %{name}.
-
-%files -n %{devstat}
-%{_libdir}/lib%{name}.a
-%{_libdir}/lib%{name}-tester.a
 
 #--------------------------------------------------------------------
 
