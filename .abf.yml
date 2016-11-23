@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   0.0.3.tar.gz: 74496273b9708e492dc963871cd5dad376592221
+sources:
+  0.4.0.tar.gz: 9eb57f5548c55a8d2084a5ea7ac67383db7d44c7
