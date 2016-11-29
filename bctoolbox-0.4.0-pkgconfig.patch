@@ -1,0 +1,26 @@
+--- bctoolbox-0.4.0/CMakeLists.txt.orig
++++ bctoolbox-0.4.0/CMakeLists.txt
+@@ -104,11 +104,11 @@
+ 
+ if(MBEDTLS_FOUND)
+ 	get_filename_component(mbedtls_library_path "${MBEDTLS_LIBRARIES}" PATH)
+-	set(LIBS_PRIVATE "${LIBS_PRIVATE} -L${mbedlts_library_path}")
++	set(LIBS_PRIVATE "${LIBS_PRIVATE} -L${CMAKE_INSTALL_FULL_LIBDIR} -lmbedtls -lmbedcrypto -lmbedx509" )
+ endif()
+ if(POLARSSL_FOUND)
+ 	get_filename_component(polarssl_library_path "${POLARSSL_LIBRARIES}" PATH)
+-	set(LIBS_PRIVATE "${LIBS_PRIVATE} -L${polarssl_library_path} -lpolarssl")
++	set(LIBS_PRIVATE "${LIBS_PRIVATE} -L${CMAKE_INSTALL_FULL_LIBDIR} -lpolarssl")
+ endif()
+ 
+ if(ENABLE_TESTS_COMPONENT)
+--- bctoolbox-0.4.0/configure.ac.orig
++++ bctoolbox-0.4.0/configure.ac
+@@ -237,6 +237,7 @@
+ AC_SUBST(CMAKE_INSTALL_PREFIX)
+ AC_SUBST(CMAKE_INSTALL_FULL_LIBDIR)
+ AC_SUBST(CMAKE_INSTALL_FULL_INCLUDEDIR)
++TESTER_REQUIRES_PRIVATE="$TESTER_REQUIRES_PRIVATE bcunit"
+ AC_SUBST(TESTER_REQUIRES_PRIVATE)
+ 
+ LIBS_PRIVATE="$LIBS_PRIVATE $MBEDTLS_LIBS $POLARSSL_LIBS"
