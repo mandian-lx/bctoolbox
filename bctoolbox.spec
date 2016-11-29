@@ -35,6 +35,7 @@ softwares like belle-sip, mediastreamer2 and linphone.
 %files -n %{libname}
 %{_libdir}/lib%{name}.so.%{major}*
 %{_libdir}/lib%{name}-tester.so.%{major}*
+%doc COPYING
 
 #--------------------------------------------------------------------
 
@@ -43,7 +44,6 @@ Summary:	Development files for %{name}
 Group:		Development/C
 Requires:	%{libname} = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
-Obsoletes:	%{name}-devel-doc < 1.0.15-2
 
 %description -n	%{devname}
 This package includes the development files for %{name}.
@@ -55,6 +55,11 @@ This package includes the development files for %{name}.
 %{_libdir}/pkgconfig/%{name}.pc
 %{_libdir}/pkgconfig/%{name}-tester.pc
 %{_datadir}/%{name}/cmake/
+%doc README
+%doc NEWS
+%doc AUTHORS
+%doc ChangeLog
+%doc COPYING
 
 #--------------------------------------------------------------------
 
