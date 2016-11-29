@@ -12,6 +12,7 @@ Url:		https://github.com/BelledonneCommunications/%{name}
 Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}.tar.gz
 #Source0:	https://download-mirror.savannah.gnu.org/releases/linphone/%{name}/%{name}-%{version}.tar.gz
 #Source1:	https://download-mirror.savannah.gnu.org/releases/linphone/%{name}/%{name}-%{version}.tar.gz.sig
+Patch0:		%{name}-0.4.0-pkgconfig.patch
 
 BuildRequires:	cmake
 BuildRequires:	mbedtls-devel
@@ -59,6 +60,9 @@ This package includes the development files for %{name}.
 
 %prep
 %setup -q
+
+# Apply all patches
+%patch0 -p1 -b .orig
 
 %build
 %cmake \
