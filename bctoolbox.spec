@@ -9,7 +9,7 @@ Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://github.com/BelledonneCommunications/%{name}
-Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}.tar.gz
+Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 #Source0:	https://download-mirror.savannah.gnu.org/releases/linphone/%{name}/%{name}-%{version}.tar.gz
 #Source1:	https://download-mirror.savannah.gnu.org/releases/linphone/%{name}/%{name}-%{version}.tar.gz.sig
 Patch0:		%{name}-0.4.0-pkgconfig.patch
